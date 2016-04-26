@@ -1,4 +1,4 @@
-# Copyright (C) 2011 The Android Open Source Project
+# Copyright (C) 2015 Schischu
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_STEM := wingray/device-wingray.mk
+DEVICE_PACKAGE_OVERLAYS := vendor/moto/wingray/overlay
 
-$(call inherit-product-if-exists, vendor/broadcom/$(LOCAL_STEM))
-$(call inherit-product-if-exists, vendor/moto/$(LOCAL_STEM))
-$(call inherit-product-if-exists, vendor/nvidia/$(LOCAL_STEM))
+$(call inherit-product, vendor/moto/wingray/wingray-vendor-blobs.mk)
